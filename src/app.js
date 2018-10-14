@@ -2,7 +2,7 @@
 // import KeywordModel from './models/KeywordModel.js'
 // import HistoryModel from './models/HistoryModel.js'
 
-// import FormComponent from './components/FormComponent.js'
+ import NavComponent from './components/NavComponent.js'
 // import ResultComponent from './components/ResultComponent.js'
 // import ListComponent from './components/ListComponent.js'
 // import TabComponent from './components/TabComponent.js'
@@ -19,7 +19,7 @@ new Vue({
     // searchResult: []
   },
   components: {
-    // 'search-form': FormComponent,
+     'nav-top': NavComponent
     // 'search-result': ResultComponent,
     // 'list': ListComponent,
     // 'tabs': TabComponent
