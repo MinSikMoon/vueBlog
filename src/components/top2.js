@@ -1,6 +1,6 @@
 Vue.component('menu-item', {
   props: ['menuitem'],
-  template: '<li>{{ menuitem.text }}</li>',
+  template: '<a>{{ menuitem.text }}</a>',
 });
 
 new Vue({

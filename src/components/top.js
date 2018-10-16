@@ -1,6 +1,6 @@
 Vue.component('menu-item', {
   props: ['menuitem'],
-  template: '<li>{{ menuitem.text }}</li>',
+  template: ' <a href="#" class="button">{{ menuitem.text }}</a>',
 });
 
 new Vue({
@@ -8,15 +8,15 @@ new Vue({
   data: {
     menulist: [{
         id: 0,
-        text: 'Vegetables'
+        text: 'minsik'
       },
       {
         id: 1,
-        text: 'Cheese'
+        text: 'menu'
       },
       {
         id: 2,
-        text: 'Whatever else humans are supposed to eat'
+        text: 'Whatever'
       }
     ]
   }

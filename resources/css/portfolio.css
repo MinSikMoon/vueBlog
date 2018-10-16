@@ -25,6 +25,7 @@
  url(“../fonts/NanumBarunGothicBold.ttf”) format(‘truetype’), /*D*/ 
  url(“../fonts/NanumBarunGothicBold.svg”) format(‘svg’); /*E*/
 }
+[v-cloak] { display: none; }
 
 body, div, ul {
 	font-family: ‘Nanum Barun Gothic Bold’, sans-serif !important;
