@@ -5,30 +5,29 @@
     <title>MinSik Moon's website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <link rel="stylesheet" href="./resources/css/portfolio.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.0/mini-default.min.css">
 </head>
 
 <body>
-    <div id="app">
-        <nav-top></nav-top>
+    <div id="top">
+        <header class="row">
+            <menu-item v-for="item in menulist" v-bind:menuItem="item" v-bind:key="item.id">
+            </menu-item>
+        </header>
+    </div>
 
-
+    <div id="top2">
+        <header class="row">
+            <menu-item v-for="item in menulist" v-bind:menuItem="item" v-bind:key="item.id">
+            </menu-item>
+        </header>
     </div>
 
     <!-- Script import -->
     <script src="./resources/js/vue.js"></script> <!-- dev version: <script src="./resources/vue.min.js"></script> -->
-    <script type="module" src="./src/app.js"></script>
+    <!-- <script src="./src/components/app.js"></script> -->
+    <script src="./src/components/top.js"></script>
+    <script src="./src/components/top2.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-<!-- 1. 탑 네비게이션 -->
-<template id="nav-top">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    </nav>
-</template>
