@@ -9,7 +9,10 @@
       <p v-bind:style="styleA">스타일 바인딩</p>
       <p v-bind:style="testAttr">그린칼라</p>
       <p v-bind:style="testAttr">{{testMessage.split('').reverse().join('')}}</p>
+      <p v-bind:style="testAttr">{{reversedMessage}}</p>
       <p v-bind:style="testAttr">{{idA + 100}}</p>
+      <button v-on:click="clickBtn(10)">click</button>
+      <button v-on:click="clickBtnEvt">click2</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
@@ -21,6 +24,19 @@
           styleA: 'color: blue',
           testMessage: 'minsik',
           testAttr: 'color: green'
+        },
+        computed: {
+          reversedMessage: function(){
+            return this.testMessage.split('').reverse().join('');
+          }
+        },
+        methods: {
+          clickBtn: function(num){
+            alert("answer : " + num)
+          },
+          clickBtnEvt: function(e){
+            console.log(e);
+          }
         }
       });
     </script>
