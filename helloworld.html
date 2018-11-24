@@ -5,19 +5,26 @@
   <body>
     <div id="app">
       {{ message }}
-      <my-component></my-component>
+      <global-component></global-component>
+      <local-component-1></local-component-1>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
-      Vue.component('my-component', {
+      Vue.component('global-component', {
         template: '<div>이건 내가 정의한 컴포넌트임.</div>'
       });
+      
+      var localCmp1 = {
+        template : '<div>이거 로컬 컴포넌트입니다.</div>'
+      };
 
       new Vue({
         el: '#app',
         data: {
           message: '아래 컴포넌트는 내가 등록한거 전역 컴포넌트다.'
+        },
+        components: {
+          'local-component-1' : localCmp1
         }
       });
     </script>
