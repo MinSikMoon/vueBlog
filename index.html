@@ -6,8 +6,9 @@
 
 <body>
     <div id="app">
+        {{message}}
         <local-comp-1></local-comp-1>
-        <local-comp-2 v-bind:propsdata="message"></local-comp-2>
+        <local-comp-2 v-on:comp2-event="parentFunc"></local-comp-2> <!-- comp2-event가 부모의 parent-func를 invoke한다.-->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -21,8 +22,12 @@
             }
         };
         var localComp2 = {
-            template: '<div>로컬컴포2 : {{propsdata}}</div>',
-            props: ['propsdata']
+            template: '<button v-on:click="comp2func">자식 컴포넌트의 버튼입니다. 이걸누르면 이벤트를 발생시켜 부모에게 데이터를 전달한다네요.</button>',
+            methods: {
+                comp2func: function () {
+                    this.$emit('comp2-event');
+                }
+            }
         };
 
 
@@ -35,6 +40,11 @@
                 'local-comp-1': localComp1,
                 'local-comp-2': localComp2
 
+            },
+            methods: {
+                parentFunc: function(){
+                    this.message = "자식 컴포넌트에서 이벤트가 발생했습니다."
+                }
             }
         });
     </script>
