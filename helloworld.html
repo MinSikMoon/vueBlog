@@ -38,12 +38,16 @@
           'local-component-1': localCmp1,
         },
       });
-
+      
       //인스턴스2 생성
       new Vue({
         el: '#app2',
         data: {
           message: '이건 뷰 인스턴스 2입니다. ',
+        },
+        //뷰 인스턴스에 지역 컴포넌트 등록
+        components: {
+          'local-component-1': localCmp1,
         },
       });
     </script>
