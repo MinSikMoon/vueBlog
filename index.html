@@ -15,6 +15,8 @@
       <button v-on:click="clickBtnEvt">click2</button>
       <input v-model="inputMsg" type="text">
       <h3>{{inputMsg}}</h3>
+      <h3 v-if="inputChk">입력하세요.</h3>
+      <h3 v-show="inputChk">입력하세요. v-show version</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
@@ -26,7 +28,8 @@
           styleA: 'color: blue',
           testMessage: 'minsik',
           testAttr: 'color: green',
-          inputMsg: 'this is default msg'
+          inputMsg: 'this is default msg',
+          inputChk: false
         },
         computed: {
           reversedMessage: function(){
@@ -43,7 +46,8 @@
         },
         watch: {
           inputMsg: function(data){
-            console.log("inputMsg change : " + data);
+            this.inputChk = (data.length === 0)?true:false;
+            console.log("inputMsg change : " + data.length);
           }
         }
       });
