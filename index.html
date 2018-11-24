@@ -1,56 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Vue Template - Data Binding</title>
+    <meta charset="utf-8">
+    <title>vue-blog</title>
   </head>
   <body>
-    <div id="app">
-      <p v-bind:id="idA">{{testMessage}}</p>
-      <p v-bind:class="classA">클래스 바인딩</p>
-      <p v-bind:style="styleA">스타일 바인딩</p>
-      <p v-bind:style="testAttr">그린칼라</p>
-      <p v-bind:style="testAttr">{{testMessage.split('').reverse().join('')}}</p>
-      <p v-bind:style="testAttr">{{reversedMessage}}</p>
-      <p v-bind:style="testAttr">{{idA + 100}}</p>
-      <button v-on:click="clickBtn(10)">click</button>
-      <button v-on:click="clickBtnEvt">click2</button>
-      <input v-model="inputMsg" type="text">
-      <h3>{{inputMsg}}</h3>
-      <h3 v-if="inputChk">입력하세요.</h3>
-      <h3 v-show="inputChk">입력하세요. v-show version</h3>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
-    <script>
-      new Vue({
-        el: '#app',
-        data: {
-          idA: 10,
-          classA: 'container',
-          styleA: 'color: blue',
-          testMessage: 'minsik',
-          testAttr: 'color: green',
-          inputMsg: 'this is default msg',
-          inputChk: false
-        },
-        computed: {
-          reversedMessage: function(){
-            return this.testMessage.split('').reverse().join('');
-          }
-        },
-        methods: {
-          clickBtn: function(num){
-            alert("answer : " + num)
-          },
-          clickBtnEvt: function(e){
-            console.log(e);
-          }
-        },
-        watch: {
-          inputMsg: function(data){
-            this.inputChk = (data.length === 0)?true:false;
-            console.log("inputMsg change : " + data.length);
-          }
-        }
-      });
-    </script>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
   </body>
 </html>
