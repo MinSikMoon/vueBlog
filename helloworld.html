@@ -5,28 +5,20 @@
   <body>
     <div id="app">
       {{ message }}
+      <my-component></my-component>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
+      Vue.component('my-component', {
+        template: '<div>이건 내가 정의한 컴포넌트임.</div>'
+      });
+
       new Vue({
         el: '#app',
         data: {
-          message: 'Hello Vue.js!'
-        },
-        beforeCreate() {
-          console.log("beforeCreate");
-        },
-        created() {
-          console.log("createed");
-        },
-        mounted() {
-          console.log("mounted");
-          this.message = "for update method calling";
-        },
-        updated() {
-          console.log("updated");
-        },
+          message: '아래 컴포넌트는 내가 등록한거'
+        }
       });
     </script>
   </body>
