@@ -13,7 +13,20 @@
         el: '#app',
         data: {
           message: 'Hello Vue.js!'
-        }
+        },
+        beforeCreate() {
+          console.log("beforeCreate");
+        },
+        created() {
+          console.log("createed");
+        },
+        mounted() {
+          console.log("mounted");
+          this.message = "for update method calling";
+        },
+        updated() {
+          console.log("updated");
+        },
       });
     </script>
   </body>
