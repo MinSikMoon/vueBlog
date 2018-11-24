@@ -1,20 +1,47 @@
 <html>
-  <head>
+
+<head>
     <title>Vue Sample</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app">
-      {{ message }}
+        <local-comp-1></local-comp-1>
+        <local-comp-2></local-comp-2>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script>
-      new Vue({
-        el: '#app',
-        data: {
-          message: 'Hello Vue.js!'
-        }
-      });
+        var localComp1 = {
+            template: '<div>로컬컴포1 : {{cmp1data}}</div>',
+            data : function(){
+                return {
+                    cmp1data : 100
+                }
+            }
+        };
+        var localComp2 = {
+            template: '<div>로컬컴포2 : {{cmp2data}}</div>',
+            data : function(){
+                return {
+                    cmp2data : localComp1.data.cmp1data
+                }
+            }
+        };
+
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            components: {
+                'local-comp-1': localComp1,
+                'local-comp-2': localComp2
+
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
